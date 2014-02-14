@@ -1,0 +1,17 @@
+<div align="center">
+
+<h1>New Address</h1>
+
+<%= form_for :recipient, url: recipients_path, method: :post do |a| %>
+	<p><%= a.text_field :nickname, :placeholder => 'nick' %></p>
+	<p><%= a.text_field :name, :placeholder => 'Nick McDonnough' %></p>
+	<p><%= a.text_field :address_line1, :placeholder => '2520 Elmont Dr' %></p>
+	<p><%= a.text_field :address_line2, :placeholder => 'Apt 220A' %></p>
+	<p><%= a.text_field :city, :placeholder => 'Austin' %></p>
+	<p><%= a.text_field :state, :placeholder => 'TX' %></p>
+	<p><%= a.text_field :zip, :placeholder => '78741' %></p>
+	<p><%= a.submit 'Save Address' %>
+<% end %>
+
+
+</div> 

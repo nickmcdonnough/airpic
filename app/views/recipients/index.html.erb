@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5"><h1>Address Book</h1></div>
+    <div class="col-md-4"><span class="pull-right">
+    	<%= link_to 'New Address', new_recipient_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+    </span></div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Full Name</th>
+        <th>SMS Nickname</th>
+        <th>Address</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+			<% @address_book.each do |a| %>
+        <tr>
+        	<td><%= @address_book.index(a) + 1 %></td>
+          <td><%= a.name %></td>
+          <td><%= a.nickname %></td>
+          <td><%= "#{a.address_line1} #{a.address_line2}" %></td>
+          <td><%= a.city %></td>
+          <td><%= link_to 'Edit', edit_recipient_path(a.id) %></td>
+          <td><%= link_to 'Delete', a, method: :delete, 
+          				data: { confirm: "Are you sure you want to delete #{a.name}?" } %></td>
+        </tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

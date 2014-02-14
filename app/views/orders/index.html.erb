@@ -1,0 +1,12 @@
+<h1>Past Orders</h1>
+<hr>
+<% @display_data.each_pair do |photo_url, names_dates| %>
+	<div class="col-sm-6 col-md-3">
+		<div class="thumbnail">
+			<%= image_tag 'https://www.google.com/images/srpr/logo11w.png' %>
+			<%#= image_tag photo_url, class: 'img-responsive' %>
+		</div>
+		<h4 align="center"><%= names_dates[0] %></h4>
+		<h5 class="text-muted" align="center"><%= names_dates[1] %></h5>
+	</div>
+<% end %>

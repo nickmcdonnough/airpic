@@ -1,0 +1,56 @@
+<style type="text/css">
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    padding: 70px 20px 20px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-left: -20px;
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+}
+.nav-sidebar > li > a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+</style>
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <br><br>
+          <ul class="nav nav-sidebar">
+          	<p class="navbar-text">Welcome, <%= current_user.first_name %>!<br />
+          		Stamps: <u><strong><%= current_user.stamp_collection %></strong></u></p>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><%= link_to 'Past Orders', orders_path %></li>
+            <li><%= link_to 'Address Book', recipients_path %></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><%= link_to 'Buy Stamps', payments_path %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          </ul>
+        </div>

@@ -1,0 +1,46 @@
+
+
+<div align="center">
+
+<h2></h2>
+
+<% if user_signed_in? %>
+
+	<%#= render 'layouts/site_news' %>
+	<%= render 'layouts/link_suggestion' %>
+	<%#= render 'photos/photo_spread' %>
+
+<% else %>
+
+<style type="text/css">
+	.jumbotron {
+		background-position: center;
+		background-size: 100% auto;
+		background-image: url(/assets/lake_davis.jpg);
+		border-radius: 6px;
+	}
+
+	.jumbotron h1 {
+		color: #fff;
+		/*text-shadow: 2px 2px #100e19;*/
+		font-size: 63px;
+		line-height: 1.5em;
+		-webkit-text-stroke: 1px black;
+	}
+	.jumbotron h3 {
+		color: #fff;
+		text-shadow: 2px 2px #100e19;
+		line-height: 1.5em;
+		/*-webkit-text-stroke: 1px black;*/
+	}
+</style>
+	<div class="jumbotron">
+		<h1>Airpic!</h1>
+		<h3>Sending custom postcards is as simple as sending a text.</h3>
+		<%= link_to 'Sign up!', new_user_registration_path, class: 'btn btn-lg btn-primary', role: 'button' %>
+		</p>
+	</div>
+
+<% end %>
+
+</div>

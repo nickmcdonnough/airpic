@@ -1,0 +1,7 @@
+<% if current_user.stamp_collection < 1 %>
+	<hr><p>Uh oh. You don't have any stamps! Please remember to purchase stamps <%= link_to 'here', new_payment_path %> in order to send postcards.</p><hr>
+<% end %>
+
+<% if current_user.recipients.size < 1 %>
+	<hr><p>You don't have anyone in your address book!  Without a saved addresses you will not be able to send postcards.  Please click <%= link_to 'here', recipients_path %> to add someone.</p><hr>
+<% end %>

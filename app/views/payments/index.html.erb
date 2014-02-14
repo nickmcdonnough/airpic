@@ -1,0 +1,14 @@
+<div align="center">
+<h2>Buy Stamps</h2>
+
+  <%= form_tag('/payments') do -%>
+  	<p><%= select_tag 'selStampQuantity' %></p>
+  	<p><%= submit_tag 'Purchase Stamps!', id: 'btnPurchase', class: 'btn btn-sm btn-primary', role: 'button' %></p>
+  <% end %>
+</div>
+<hr>
+<h3>Stamp Transaction History</h3>
+<hr>
+<% @stamp_history.each do |s| %>
+  <%= s.quantity > 0 ? 'Bought' : 'Spent' %> <%= s.quantity.abs %> stamps: <strong><%= Time.at(s.date.to_i) %></strong><hr>
+<% end %>

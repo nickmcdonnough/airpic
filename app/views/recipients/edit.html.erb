@@ -1,0 +1,17 @@
+<div align="center">
+
+<h1>Edit <%= @address_to_edit.name.split[0] %>'s Address</h1>
+
+<%= form_for @address_to_edit, url: { action: "update" } do |a| %>
+	<p><%= a.text_field :nickname, value: @address_to_edit.nickname %></p>
+	<p><%= a.text_field :name, value: @address_to_edit.name %></p>
+	<p><%= a.text_field :address_line1, value: @address_to_edit.address_line1 %></p>
+	<p><%= a.text_field :address_line2, value: @address_to_edit.address_line2 %></p>
+	<p><%= a.text_field :city, value: @address_to_edit.city %></p>
+	<p><%= a.text_field :state, value: @address_to_edit.state %></p>
+	<p><%= a.text_field :zip, value: @address_to_edit.zip %></p>
+	<p><%= a.submit 'Save Address' %>
+<% end %>
+
+
+</div> 
