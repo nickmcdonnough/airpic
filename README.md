@@ -26,8 +26,8 @@ As mentioned earlier, users needs virtual stamps in order to send postcards with
 
 ## To do:
 Major overhaul on the front end including:
-	+ an informative home page
-	+ an informative landing page
-	+ an attractive way to interact with postcards already sent
+	- an informative home page
+	- an informative landing page
+	- an attractive way to interact with postcards already sent
 Create a way for users to upload photos via the web
 Find a new payment processor
