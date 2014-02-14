@@ -25,9 +25,9 @@ Lob handles the printing and mailing of the postcards.  The primary reason I cho
 As mentioned earlier, users needs virtual stamps in order to send postcards with Airpic.  Stripe is the payment processor that handles the collection of credit card data in order for users to purchase Airpic stamps.  Like Mogreet and Lob, I chose Stripe because it has a really easy to undersatnd API and it was a breeze to integrate their Checkou form (built on stripe.js) into my own application.  The major downside to stripe is the price.  They charge 2.9% plus $0.30 per successful charge.  Because of this I shouldn't really allow users to purchase stamps one stamp at a time.  I intend to find a payment processor that can support micropayments.
 
 ## To do:
-Major overhaul on the front end including:
++ Major overhaul on the front end including:
 	- an informative home page
 	- an informative landing page
 	- an attractive way to interact with postcards already sent
-Create a way for users to upload photos via the web
-Find a new payment processor
++ Create a way for users to upload photos via the web
++ Find a new payment processor
