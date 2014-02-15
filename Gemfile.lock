@@ -101,8 +101,6 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
-    rename (1.0.2)
-      rails (>= 3.0.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rmagick (2.13.2)
@@ -153,7 +151,6 @@ DEPENDENCIES
   pg
   rails (= 4.0.0)
   rails_12factor
-  rename
   rmagick
   sass-rails (~> 4.0.0)
   sdoc
