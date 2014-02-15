@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_one :card
 
-  @lob = Lob(api_key: ENV['LOB_TEST']) #change to 'LOB_API_KEY'
+  @lob = Lob(api_key: ENV['LOB_API_KEY'])
 
   def self.process_incoming_mms(incoming)
     sender = User.lookup_sender(incoming) # check that incoming number is in db
