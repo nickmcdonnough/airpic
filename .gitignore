@@ -23,6 +23,6 @@
 /test
 
 # Ignore db migrations
-/db/migrate/*.rb
+#/db/migrate/*.rb
 
 test.json
