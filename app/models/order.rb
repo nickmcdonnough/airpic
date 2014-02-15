@@ -4,7 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_one :card
 
-  @@lob = Lob(api_key: ENV['LOB_API_KEY'])
+  @lob = Lob(api_key: ENV['LOB_API_KEY'])
 
   def self.process_incoming_mms(incoming)
     sender = User.lookup_sender(incoming) # check that incoming number is in db
@@ -38,7 +38,7 @@ class Order < ActiveRecord::Base
       zip: '78741'
     }
 
-    lob_order = @@lob.postcards.create(
+    lob_order = @lob.postcards.create(
       name: "#{sender.id}_#{Time.now.to_i}",
       to: to_lob_id,
       from: from_address,
