@@ -56,11 +56,11 @@ class Card < ActiveRecord::Base
     AWS::S3::S3Object.store(
       file,
       File.open(file), # question this. seems to work so far.
-      "airpic/#{sender.id}/",
+      "airpic/#{sender_id}/",
       access: :public_read
     )
 
-    AWS::S3::S3Object.url_for(file, "airpic/#{sender.id}/", authenticated: false)
+    AWS::S3::S3Object.url_for(file, "airpic/#{sender_id}/", authenticated: false)
   end
 
   def self.cleanup_old_pics
