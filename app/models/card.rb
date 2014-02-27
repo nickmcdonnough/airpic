@@ -1,3 +1,4 @@
+require 'RMagick'
 require 'messaging.rb'
 
 class Card < ActiveRecord::Base

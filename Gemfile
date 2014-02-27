@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'lob'
 gem 'aws-s3'
 gem 'devise', '>= 3.0.0'
-gem 'rmagick', require: false
+gem 'rmagick', :require => 'RMagick'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development do
