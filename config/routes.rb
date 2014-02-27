@@ -2,7 +2,7 @@ Airpic::Application.routes.draw do
   devise_for :users
 
   root 'home#index'
-  post '/order'=> 'order#create'
+  post '/order'=> 'orders#create'
 
   resources :payments
   resources :recipients
