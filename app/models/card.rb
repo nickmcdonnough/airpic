@@ -30,8 +30,8 @@ class Card < ActiveRecord::Base
     new_photo.write("tmp_pics/#{photo_name}.pdf")
     new_photo.write("tmp_pics/#{photo_name}.png")
     
-    pic_pdf_url = send_to_s3(sender.id, File.basename("#{photo_name}.pdf"))
-    pic_web_url = send_to_s3(sender.id, File.basename("#{photo_name}.png"))
+    pic_pdf_url = send_to_s3(sender.id, File.basename("tmp_pics/#{photo_name}.pdf"))
+    pic_web_url = send_to_s3(sender.id, File.basename("tmp_pics/#{photo_name}.png"))
 
     return pic_pdf_url, pic_web_url
   end
