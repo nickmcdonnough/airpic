@@ -27,11 +27,11 @@ class Card < ActiveRecord::Base
       return false
     end
     new_photo.density = '300x300'
-    new_photo.write("tmp_pics/#{photo_name}.pdf")
-    new_photo.write("tmp_pics/#{photo_name}.png")
+    new_photo.write("#{RAILS_ROOT}/tmp/#{photo_name}.pdf")
+    new_photo.write("#{RAILS_ROOT}/tmp/#{photo_name}.png")
     
-    pic_pdf_url = send_to_s3(sender.id, File.basename("tmp_pics/#{photo_name}.pdf"))
-    pic_web_url = send_to_s3(sender.id, File.basename("tmp_pics/#{photo_name}.png"))
+    pic_pdf_url = send_to_s3(sender.id, "#{photo_name}.pdf")
+    pic_web_url = send_to_s3(sender.id, "#{photo_name}.png")
 
     return pic_pdf_url, pic_web_url
   end
@@ -56,7 +56,7 @@ class Card < ActiveRecord::Base
 
     AWS::S3::S3Object.store(
       file,
-      File.open(file), # question this. seems to work so far.
+      File.open("#{RAILS_ROOT}/tmp/#{file}"), # question this. seems to work so far.
       "airpic/#{sender_id}/",
       access: :public_read
     )
@@ -65,7 +65,7 @@ class Card < ActiveRecord::Base
   end
 
   def self.cleanup_old_pics
-    Dir.glob("tmp_pics/*").each do |file|
+    Dir.glob("#{RAILS_ROOT}/tmp/*").each do |file|
       if (Time.now - File.ctime(file))/(24*3600) > 2
         File.delete(file) 
       end
